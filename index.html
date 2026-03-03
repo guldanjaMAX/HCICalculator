@@ -805,6 +805,10 @@
     .top-bar { padding: 12px 20px; }
     .assessment-entry { flex-direction: column; align-items: center; text-align: center; }
   }
+
+  /* Scroll Animations */
+  .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
 </style>
 </head>
 <body>
@@ -831,7 +835,20 @@
 <!-- Trust Strip -->
 <div class="trust-strip">
   <p>Trusted by organizations including</p>
-  <div class="orgs">Microsoft &nbsp;&middot;&nbsp; World Food Programme &nbsp;&middot;&nbsp; Commonwealth Bank &nbsp;&middot;&nbsp; Australian Financial Complaints Authority</div>
+  <div style="max-width:1000px;margin:12px auto 0;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:24px 40px">
+    <div style="display:flex;align-items:center;height:38px"><img src="images/logos/microsoft.svg" alt="Microsoft" style="max-height:34px;max-width:120px;object-fit:contain;filter:grayscale(100%) opacity(0.6);transition:filter 0.3s" onmouseover="this.style.filter='grayscale(0%) opacity(1)'" onmouseout="this.style.filter='grayscale(100%) opacity(0.6)'"></div>
+    <div style="display:flex;align-items:center;height:38px"><span style="font-family:'Raleway',sans-serif;font-size:13px;font-weight:700;color:rgba(255,255,255,0.6);letter-spacing:0.5px">Boston Children's Hospital</span></div>
+    <div style="display:flex;align-items:center;height:38px"><span style="font-family:'Raleway',sans-serif;font-size:13px;font-weight:700;color:rgba(255,255,255,0.6);letter-spacing:0.5px">U.S. Navy</span></div>
+    <div style="display:flex;align-items:center;height:38px"><span style="font-family:'Raleway',sans-serif;font-size:13px;font-weight:700;color:rgba(255,255,255,0.6);letter-spacing:0.5px">Progressive Insurance</span></div>
+    <div style="display:flex;align-items:center;height:38px"><span style="font-family:'Raleway',sans-serif;font-size:13px;font-weight:700;color:rgba(255,255,255,0.6);letter-spacing:0.5px">Duke Energy</span></div>
+    <div style="display:flex;align-items:center;height:38px"><span style="font-family:'Raleway',sans-serif;font-size:13px;font-weight:700;color:rgba(255,255,255,0.6);letter-spacing:0.5px">Scottish Parliament</span></div>
+    <div style="display:flex;align-items:center;height:38px"><img src="images/logos/afcc.png" alt="AFCC" style="max-height:34px;max-width:120px;object-fit:contain;filter:brightness(0) invert(1) opacity(0.5);transition:filter 0.3s" onmouseover="this.style.filter='brightness(0) invert(1) opacity(0.9)'" onmouseout="this.style.filter='brightness(0) invert(1) opacity(0.5)'"></div>
+    <div style="display:flex;align-items:center;height:38px"><img src="images/logos/aaml.svg" alt="AAML" style="max-height:34px;max-width:120px;object-fit:contain;filter:brightness(0) invert(1) opacity(0.5);transition:filter 0.3s" onmouseover="this.style.filter='brightness(0) invert(1) opacity(0.9)'" onmouseout="this.style.filter='brightness(0) invert(1) opacity(0.5)'"></div>
+    <div style="display:flex;align-items:center;height:38px"><img src="images/logos/ioa.png" alt="IOA" style="max-height:34px;max-width:120px;object-fit:contain;filter:brightness(0) invert(1) opacity(0.5);transition:filter 0.3s" onmouseover="this.style.filter='brightness(0) invert(1) opacity(0.9)'" onmouseout="this.style.filter='brightness(0) invert(1) opacity(0.5)'"></div>
+    <div style="display:flex;align-items:center;height:38px"><img src="images/logos/primo-brands.svg" alt="Primo Brands" style="max-height:34px;max-width:120px;object-fit:contain;filter:brightness(0) invert(1) opacity(0.5);transition:filter 0.3s" onmouseover="this.style.filter='brightness(0) invert(1) opacity(0.9)'" onmouseout="this.style.filter='brightness(0) invert(1) opacity(0.5)'"></div>
+    <div style="display:flex;align-items:center;height:38px"><span style="font-family:'Raleway',sans-serif;font-size:13px;font-weight:700;color:rgba(255,255,255,0.6);letter-spacing:0.5px">Commonwealth Bank</span></div>
+    <div style="display:flex;align-items:center;height:38px"><span style="font-family:'Raleway',sans-serif;font-size:13px;font-weight:700;color:rgba(255,255,255,0.6);letter-spacing:0.5px">Israeli Knesset</span></div>
+  </div>
 </div>
 
 <div class="container">
@@ -1186,6 +1203,23 @@ function calculate() {
 
 // Initial calculation
 calculate();
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.card, .result-hero, .breakdown-bar, .roi-card, .section-intro h2').forEach(function(el) {
+    el.classList.add('fade-up');
+  });
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.fade-up').forEach(function(el) { observer.observe(el); });
+});
 </script>
 
 </body>
