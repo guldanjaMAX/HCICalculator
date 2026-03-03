@@ -5,16 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>High Conflict Institute | The True Cost of Workplace Conflict</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Raleway:wght@600;700;800&display=swap');
 
   :root {
-    --navy: #0F0E15;
-    --green: #81D742;
-    --teal: #1A6B5C;
+    --navy: #024682;
+    --green: #659BB6;
+    --teal: #7DA5C3;
     --white: #FFFFFF;
-    --light-bg: #F8F9FA;
-    --border: #E2E8F0;
-    --text-muted: #64748B;
+    --light-bg: #F5F8FA;
+    --border: #D4E1EC;
+    --text-muted: #5A7A8A;
     --red-accent: #E53E3E;
     --amber: #F6AD55;
   }
@@ -22,14 +22,14 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
     background: var(--light-bg);
-    color: var(--navy);
+    color: #333333;
     line-height: 1.6;
   }
 
   .hero {
-    background: linear-gradient(135deg, var(--navy) 0%, #1a1930 50%, var(--teal) 100%);
+    background: linear-gradient(135deg, var(--navy) 0%, #013A6B 50%, var(--teal) 100%);
     color: var(--white);
     padding: 60px 40px 50px;
     text-align: center;
@@ -37,9 +37,9 @@
 
   .hero-badge {
     display: inline-block;
-    background: rgba(129, 215, 66, 0.15);
-    border: 1px solid rgba(129, 215, 66, 0.3);
-    color: var(--green);
+    background: rgba(101, 155, 182, 0.15);
+    border: 1px solid rgba(101, 155, 182, 0.3);
+    color: var(--white);
     font-size: 12px;
     font-weight: 600;
     letter-spacing: 1.5px;
@@ -54,6 +54,7 @@
     font-weight: 800;
     margin-bottom: 12px;
     letter-spacing: -0.5px;
+    font-family: 'Raleway', sans-serif;
   }
 
   .hero p {
@@ -116,7 +117,7 @@
     width: 100%;
     padding: 12px 16px;
     font-size: 16px;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Roboto', sans-serif;
     border: 2px solid var(--border);
     border-radius: 10px;
     background: var(--light-bg);
@@ -165,7 +166,7 @@
     text-align: center;
     padding: 28px 16px;
     border-radius: 14px;
-    background: linear-gradient(135deg, var(--navy) 0%, #1a1930 100%);
+    background: linear-gradient(135deg, var(--navy) 0%, #013A6B 100%);
     color: var(--white);
   }
 
@@ -174,7 +175,7 @@
   }
 
   .big-number-card.green {
-    background: linear-gradient(135deg, var(--teal) 0%, #228B6B 100%);
+    background: linear-gradient(135deg, var(--teal) 0%, #5A8FA8 100%);
   }
 
   .big-number {
@@ -199,6 +200,7 @@
     font-weight: 700;
     margin-bottom: 16px;
     color: var(--navy);
+    font-family: 'Raleway', sans-serif;
   }
 
   .breakdown-bar {
@@ -246,16 +248,17 @@
   .roi-section {
     margin-top: 40px;
     padding: 32px;
-    background: linear-gradient(135deg, rgba(26,107,92,0.05) 0%, rgba(129,215,66,0.08) 100%);
+    background: linear-gradient(135deg, rgba(2,70,130,0.05) 0%, rgba(125,165,195,0.1) 100%);
     border-radius: 16px;
-    border: 2px solid rgba(26,107,92,0.15);
+    border: 2px solid rgba(2,70,130,0.15);
   }
 
   .roi-section h3 {
     font-size: 20px;
     font-weight: 700;
-    color: var(--teal);
+    color: var(--navy);
     margin-bottom: 8px;
+    font-family: 'Raleway', sans-serif;
   }
 
   .roi-section .subtitle {
@@ -286,7 +289,7 @@
 
   .tier-card.recommended {
     border-color: var(--green);
-    box-shadow: 0 4px 20px rgba(129,215,66,0.15);
+    box-shadow: 0 4px 20px rgba(101,155,182,0.2);
   }
 
   .tier-card .tier-name {
@@ -326,7 +329,7 @@
 
   .recommended-badge {
     background: var(--green);
-    color: var(--navy);
+    color: var(--white);
     font-size: 11px;
     font-weight: 700;
     padding: 3px 10px;
@@ -367,6 +370,7 @@
     font-size: 28px;
     font-weight: 700;
     margin-bottom: 12px;
+    font-family: 'Raleway', sans-serif;
   }
 
   .footer-cta p {
@@ -380,17 +384,17 @@
     display: inline-block;
     padding: 14px 36px;
     background: var(--green);
-    color: var(--navy);
+    color: var(--white);
     font-size: 16px;
     font-weight: 700;
-    border-radius: 10px;
+    border-radius: 8px;
     text-decoration: none;
     transition: transform 0.2s, box-shadow 0.2s;
   }
 
   .cta-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 16px rgba(129,215,66,0.3);
+    box-shadow: 0 4px 16px rgba(101,155,182,0.35);
   }
 
   .source-note {
@@ -413,6 +417,7 @@
 <body>
 
 <div class="hero">
+  <img src="https://www.highconflictinstitute.com/wp-content/uploads/2022/09/HCI-Logo-1.png" alt="High Conflict Institute" style="height: 60px; margin-bottom: 20px;">
   <div class="hero-badge">Conflict Cost Calculator</div>
   <h1>The True Cost of Workplace Conflict</h1>
   <p>See how much unresolved conflict is costing your organization every year, and what the ROI looks like when you address it.</p>
